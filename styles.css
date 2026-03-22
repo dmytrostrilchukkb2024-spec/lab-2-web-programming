@@ -1,49 +1,114 @@
+/* Підключаємо сучасний шрифт Inter з Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Використовуємо змінні для легкого керування палітрою кольорів */
+:root {
+    --bg-color: #f8fafc;        /* Світло-сірий фон сторінки */
+    --card-bg: #ffffff;         /* Білий фон контейнера */
+    --text-main: #1e293b;       /* Основний темний колір тексту */
+    --text-muted: #64748b;      /* Приглушений колір для підзаголовків */
+    --accent: #3b82f6;          /* Сучасний синій акцент */
+    --accent-light: #eff6ff;    /* Дуже світлий синій для фонових елементів */
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    /* Використовуємо flexbox для ідеального центрування на екрані */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .container {
-    width: 700px;
-    margin: auto;
-    background: white;
-    padding: 30px;
+    width: 100%;
+    max-width: 700px; /* Тепер блок адаптивний для мобільних пристроїв */
+    background: var(--card-bg);
+    padding: 40px 50px;
+    border-radius: 16px; /* Більш заокруглені, сучасні кути */
+    /* Багатошарова тінь для створення ефекту глибини (soft shadow) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05),
+                0 1px 3px rgba(0, 0, 0, 0.03);
+    box-sizing: border-box;
     margin-top: 40px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
 }
 
 h1 {
     text-align: center;
-    color: #2c3e50;
+    color: var(--text-main);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: -0.02em; /* Злегка зближені літери для заголовків */
 }
 
 .subtitle {
     text-align: center;
-    font-size: 18px;
-    color: #555;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 35px;
 }
 
 h3 {
-    color: #34495e;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 5px;
+    color: var(--text-main);
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0; /* Легка базова лінія */
+    padding-bottom: 10px;
+    margin-top: 40px;
+    position: relative;
+}
+
+/* Додаємо стильний кольоровий акцент до лінії під заголовком h3 */
+h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent);
 }
 
 ul {
-    list-style-type: square;
+    list-style-type: none; /* Прибираємо стандартні квадрати */
+    padding-left: 0;
 }
 
 li {
-    margin: 5px 0;
+    position: relative;
+    margin: 12px 0;
+    padding-left: 24px;
+    color: #334155;
+}
+
+/* Створюємо власні, більш акуратні маркери для списку */
+li::before {
+    content: "•";
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.5em;
+    position: absolute;
+    left: 4px;
+    top: -4px;
 }
 
 p {
-    line-height: 1.6;
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 16px;
 }
 
 hr {
-    margin: 20px 0;
+    border: none;
+    height: 1px;
+    /* Градієнтна лінія замість звичайної суцільної */
+    background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+    margin: 35px 0;
 }
