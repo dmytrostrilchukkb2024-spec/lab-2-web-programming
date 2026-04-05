@@ -1,32 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме — Стрільчук Дмитро</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <button id="theme-toggle" class="theme-btn">🌙 Перемкнути тему</button>
+
     <div class="container">
         <h1>Стрільчук Дмитро</h1>
         <p class="subtitle">Студент спеціальності «Кібербезпека та захист інформації»</p>
-
         <hr>
-
         <ul>
             <li><b>Телефон:</b> +380991303600</li>
             <li><b>Email:</b> dmytro.strilchuk.kb.2024@lpnu.ua</li>
             <li><b>Місто:</b> Львів</li>
         </ul>
-
         <hr>
 
         <h3>Про себе</h3>
-        <p>
-            Я студент 2 курсу спеціальності «Кібербезпека» Національного університету
-            "Львівська політехніка". Зацікавлений у сфері інформаційної безпеки,
-            мережевих технологій та захисту даних.
-        </p>
+        <p>Я студент 2 курсу спеціальності «Кібербезпека» Національного університету "Львівська політехніка". Зацікавлений у сфері інформаційної безпеки, мережевих технологій та захисту даних.</p>
 
         <h3>Освіта</h3>
         <p><b>Національний університет "Львівська політехніка"</b> (2024 — 2028)</p>
@@ -37,12 +33,43 @@
         <p><b>Кур'єр:</b> Працював у службі доставки.</p>
 
         <h3>Навички</h3>
-        <p><b>Веб-розробка:</b> Розуміння та використання базових тегів HTML.</p>
+        <p><b>Веб-розробка:</b> Розуміння та використання базових тегів HTML, CSS, JS.</p>
         <p><b>Версійність:</b> Використання системи керування версіями Git.</p>
         <p><b>Soft skills:</b> Навички ефективної командної роботи.</p>
 
         <hr>
+        
+        <h3>Відгуки роботодавців</h3>
+        <div id="comments-section">
+            <p>Завантаження коментарів...</p>
+        </div>
     </div>
 
+    <footer id="info-footer">
+        </footer>
+
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Зворотній зв'язок</h2>
+            <form action="https://formspree.io/f/ВАШ_ЕНДПОЙНТ" method="POST">
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Номер телефону:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="message">Повідомлення:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit" class="submit-btn">Відправити</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
